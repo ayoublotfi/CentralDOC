@@ -1,0 +1,35 @@
+
+.hello{  
+  text-align:center;
+  margin:10% 30%;
+  padding:1%;
+  color:rgb(20, 13, 13)
+}
+
+.hrTFJ{
+  margin-bottom: 5%;
+}
+
+.hrTFJbutton{
+  margin-top: 2%;
+}
+
+@mixin BoxShadow ($dp) {
+  @if $dp==0 {
+      box-shadow: none
+  }
+  @else if $dp==1 {
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12), 0 1px 3px 0 rgba(0, 0, 0, .20)
+  }
+  @else if $dp==24 {
+      box-shadow: 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12), 0 11px 15px -7px rgba(0, 0, 0, .20)
+  }
+}
+.card {
+  @include BoxShadow(1);
+  background-color: rgba(126, 131, 85, 0.4);
+  border-radius: 2px;
+  &:hover {
+      @include BoxShadow(24)
+  }
+}

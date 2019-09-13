@@ -1,0 +1,75 @@
+<div class="all">
+  <div class="libraries">
+    <div class="mat-elevation-z0 libra ">
+      <div class="library">
+        <mat-card class="example-card-title boxShadow">
+          <mat-card-content>
+            <h2 mat-button class="listLibraries">List of libraries</h2>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <hr>
+      <div class="library" *ngFor="let lib of libraries?._embedded.libraries">
+        <div class="libs">
+          <div class="libs-title">
+            <p (click)="onChoose(lib.name)">
+              {{lib.name}}
+            </p>
+          </div>
+          <div class="libs-buttons">
+              <a (click)="onChoose(lib)"><mat-icon>remove_red_eye</mat-icon></a>
+          </div>
+          <div class="libs-buttons">
+
+            <div class="container">
+
+              
+                <a (click)="aff(lib)" data-toggle="modal"
+                data-target="#myModal"><mat-icon>edit</mat-icon></a>
+              <!-- The Modal -->
+              <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+
+
+                    <!-- Modal body -->
+                    <input type="text" class="form-control" [(ngModel)]="editlib" name="editlib" value="{{name}}">
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-light" (click)="updatelib(lib)"
+                        data-dismiss="modal">Edit</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+
+          </div>
+          <div class="libs-buttons">
+             <a (click)="deletelib(lib)"> <mat-icon>delete</mat-icon></a>
+          
+          </div>
+        </div>
+        <hr>
+      </div>
+      
+        <mat-card-content>
+          <button mat-raised-button color="warn" (click)="openDialog()" class="btn btn-light">
+            <mat-icon>add</mat-icon>Add a new Library to Docs
+          </button>
+        </mat-card-content>
+      
+    </div>
+  </div>
+  <div class="libraryItem">
+    <app-item (selectItem)="onChoose(selectedLibrary)" [name]="selectedLibrary">
+
+     
+    </app-item>
+  </div>
+</div>

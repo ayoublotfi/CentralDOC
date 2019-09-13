@@ -1,0 +1,78 @@
+.libra{
+    padding: 2%;
+    color: rgb(171, 177, 170);
+    text-align: center;
+    background-color: rgba(63, 81, 181,1);
+ }
+ 
+ .libraries{
+    width:22%;
+
+ }
+ .all{
+     display: flex;
+     margin: 1% 1%
+ }
+.example-card-two {
+    max-width: 98%;
+     //background-color: rgba(15, 15, 4, 0.7);
+     //background-image: url('https://wallpapersite.com/images/pages/pic_h/901.jpg');
+     background-color: rgb(247, 233, 233);
+     color: rgb(61, 22, 22); 
+     text-align: center;
+     
+}
+.example-card-title{
+    max-width: 98%;
+    background:beige;
+    color: #3f51b5 ;
+    text-align: center;
+}
+.refVM{
+    background-color: rgb(214, 202, 193);
+    color: rgb(70, 70, 59);
+    margin-right: 2%;
+ }
+.refVM_add{
+    background-color: rgb(214, 202, 193);
+    color: rgb(70, 70, 59);
+    margin-right: 2%;
+    width: 100%;
+}
+ .listLibraries{
+     font-size:1em;
+
+ }
+
+ .example-card-title{
+    background-color: #f8f9fa;
+    color: rgb(70, 70, 59);
+    max-width: 98%;
+    text-align: center;
+}
+
+.libraryItem{
+    width: 78%;
+    height: 100%;
+    max-height: 800px; 
+    overflow-y: auto;
+}
+
+.libs{
+    display: flex;
+    text-align: left;
+    padding-left: 4%;
+}
+
+.libs-title{
+    width: 60%;
+    color: aliceblue;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.libs-buttons{
+    margin:0;
+    cursor: pointer;
+    color: #f8f9fa;
+}

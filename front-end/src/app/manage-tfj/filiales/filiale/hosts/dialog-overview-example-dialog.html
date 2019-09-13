@@ -1,0 +1,11 @@
+<div>
+        <h1 mat-dialog-title>VM : <span class="spanModal">{{data.ip}}</span></h1>
+        <div mat-dialog-content>
+          <p>You will Send a mail to all TMA members, telling them that you will lunch TFJ process</p>
+        </div>
+        <hr>
+        <div mat-dialog-actions>
+          <button mat-button (click)="onNoClick()">No Thanks</button>
+          <button mat-button [mat-dialog-close]="data.ip" cdkFocusInitial>Confirm</button>
+        </div>
+</div>

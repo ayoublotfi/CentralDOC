@@ -1,0 +1,52 @@
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+.containers{
+  min-height:100%;
+  position:relative;
+}
+
+.content{
+  margin-bottom: 3%;
+}
+
+.nav-Menu{
+  background-color: #3f51b5;
+  color: beige;
+}
+
+.nav-Menu-Logo{
+  background-color: #f8f9fa;
+  color: rgb(70, 70, 59);
+  padding: 1%;
+}
+
+.filler {
+  flex: 1 1 auto;
+}
+
+.footer {
+  background-color:#3f51b5;
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer p {
+  font-size: 12px;
+}
+
+.footer p mat-icon {
+  font-size: 14px;
+}
+
+.footer a img {
+  width: 25px;
+}
+a:hover {
+  color: #212529;
+  text-decoration: none;
+}

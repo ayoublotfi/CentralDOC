@@ -1,0 +1,28 @@
+
+  
+<div class="all">
+  <div class="filialess">
+    <div class="mat-elevation-z0 filiales boxShadow">
+      <h2>
+       Liste des Filiales
+     </h2>
+      <mat-spinner [style.display]="loading ? 'block' : 'none'"></mat-spinner>
+      <mat-table [style.display]="loading === false ? 'block' : 'none'" #table [dataSource]="dataSource" matSort>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>      
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"><a mat-button  (click)="onClick(element.name)">{{element.name}}</a></mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="typeDb">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Type Database </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.typeDb}} </mat-cell>
+      </ng-container>
+      </mat-table>
+    </div>
+  </div>
+  <div class="filial">
+      <app-filiale [selectedFiliale]="selected"></app-filiale>
+  </div>
+  
+</div>

@@ -1,0 +1,35 @@
+ 
+.item-title{
+  background-color:  rgb(250, 240, 240);
+  padding: 1% 2% 2% 2%;
+  width: 100%;
+  margin: 5px;
+}
+.item{
+    display: flex;
+    margin-bottom: 6px;
+    margin: 10px;
+}
+.title{
+  color: rgb(22, 6, 6);
+  justify-content: center;
+}
+.content-qst{
+  background-color: rgb(196, 198, 207);
+  color: rgb(165, 42, 42);
+      padding: 0.5%;
+   
+}
+.question{
+    display: flex;
+}
+.question-title{
+  width: 70%;
+}
+.question-buttons{
+    width: 43%;
+    display:flex;
+}
+.add-button{
+    margin: 1%;
+}

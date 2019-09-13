@@ -1,0 +1,56 @@
+<div class="content">
+  <div class="item">
+    <div class="item-title">
+      <h2 class="title">
+        {{name}} -- Q/A
+      </h2>
+    </div>
+    <div class="item-button">
+    <div class="container">
+        <h2 class="title">
+        <button mat-raised-button class="add-button boxShadow" data-toggle="modal"
+        data-target="#myModal2">
+          <mat-icon>add</mat-icon>
+          Ask New Question
+        </button>
+      </h2>
+      
+        <!-- The Modal -->
+        <div class="modal" id="myModal2" >
+          <div class="modal-dialog">
+            <div class="modal-content"style="padding: 10px">
+
+              <!-- Modal body -->
+              <h3>Add new question</h3>
+              <mat-label>Question</mat-label>
+              <input type="text"class="form-control" [(ngModel)]="quest" name="quest"  placeholder="..." >
+              
+              <mat-label>Description</mat-label>
+                  <textarea class="form-control" [(ngModel)]="desc" name="desc" rows="8" cols="40" placeholder="..." ></textarea>
+                 
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="add()"
+                  data-dismiss="modal">Ajouter</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="content search boxShadow">
+    <form class="example-form flex">
+      <mat-form-field class="example-full-width ">
+        <input matInput [(ngModel)]="search" name="search" placeholder="Search" value="">
+      </mat-form-field>
+      <button mat-raised-button (click)="searchqst()" class="search-button">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+  </div>
+  <hr>
+  <app-questions></app-questions>
+</div>

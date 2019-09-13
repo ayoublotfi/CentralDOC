@@ -1,0 +1,82 @@
+<div class="question" *ngFor="let quest of question?._embedded.questions">
+    <div class="item-title boxShadow">
+        <div class="title">
+            <div class="question">
+                <div class="question-title">
+                    <h5 class="item">{{quest.qst}}</h5>
+                </div>
+                <div class="question-buttons">
+                    <div class="add-button">
+                        <div class="container">
+
+                            <button class="add-button" mat-raised-button data-toggle="modal" (click)="recup_id(quest.id_qst)" data-target="#myModal3">
+                                <mat-icon>add</mat-icon>
+
+                            </button>
+
+
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal3">
+                                <div class="modal-dialog">
+                                    <div class="modal-content" style="padding: 10px">
+
+                                        <!-- Modal body -->
+                                        <h3>Add new answer</h3>
+
+                                        <mat-label>Réponse</mat-label>
+                                        <textarea class="form-control" [(ngModel)]="rep1" name="rep1" rows="8" cols="40"
+                                            placeholder="..."></textarea>
+
+                                        <mat-label>Fichier</mat-label>
+                                        <input type="file" class="form-control">
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" (click)="add_rep()"
+                                                data-dismiss="modal">Ajouter</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="add-button">
+                        <button mat-raised-button (click)="onShowComments(quest)">
+                            <mat-icon>list</mat-icon>
+
+                        </button>
+                    </div>
+                    <div class="add-button">
+                        <button mat-raised-button (click)="deletedst(quest)">
+                            <mat-icon>delete</mat-icon> 
+                        </button>
+
+                    </div>
+                    <div class="add-button">
+                        <button mat-raised-button>
+                            <mat-icon>thumb_up</mat-icon>
+                            +
+                        </button>
+
+                    </div>
+                    <div class="add-button">
+                        <button mat-raised-button>
+                            <mat-icon>thumb_down</mat-icon>
+                            -
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-qst boxShadow" *ngIf="showComment">
+                <div *ngFor="let rep of reponse?._embedded.reponses">
+                    <p>
+                        {{rep.text}}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

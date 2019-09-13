@@ -1,0 +1,44 @@
+<div class="mat-elevation-z0 hosts boxShadow">
+      <h3>
+        Liste des Serveurs
+      </h3>  
+  <mat-spinner [style.display]="loading ? 'block' : 'none'"></mat-spinner>
+
+    <mat-table [style.display]="loading === false ? 'block' : 'none'" #table [dataSource]="dataSource" matSort>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>      
+      <ng-container matColumnDef="hostname">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Hostname </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.hostname}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="ip">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> IP </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.ip}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="filiale">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Filiale </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.filiale}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="type">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="operations">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Operations </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          <button mat-button color="primary" (click)="beforeTFJ(element.ip)"
+          matTooltip="Before TFJ, you will send a mail to TMA members & Declare that you will lunch a TFJ">
+            <mat-icon>cloud_upload</mat-icon> Before
+          </button>
+          <button mat-button color="primary" (click)="afterTFJ(element.ip)"
+          matTooltip="After TFJ, you will send a mail to TMA members & Declare that the TFJ is finished">
+            <mat-icon>cloud_download</mat-icon> After
+          </button>
+       </mat-cell>
+      </ng-container>
+    </mat-table>
+  </div>
+
+  
+  
